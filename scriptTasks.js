@@ -1,7 +1,6 @@
 const listsContainer = document.querySelector('[data-lists]')
-const newListForm = document.querySelector('[data-new-list-form]')
-const newListInput = document.querySelector('[data-new-list-input]')
-const deleteListButton = document.querySelector('[data-delete-list-button]')
+const newListForm = document.querySelector('[data-new-task-form]')
+const newListInput = document.querySelector('[data-new-task-input]')
 const listDisplayContainer = document.querySelector('[data-list-display-container]')
 const listTitleElement = document.querySelector('[data-list-title]')
 const listCountElement = document.querySelector('[data-list-count]')
@@ -39,7 +38,7 @@ clearCompleteTasksButton.addEventListener('click', e => {
   saveAndRender()
 })
 
-deleteListButton.addEventListener('click', e => {
+document.querySelector('[data-delete-button]').addEventListener('click', e => {
   lists = lists.filter(list => list.id !== selectedListId)
   selectedListId = null
   saveAndRender()
