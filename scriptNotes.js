@@ -3,11 +3,9 @@ const activeDisplay = document.querySelector('[data-list-display-container]');
 const newNoteInput = document.querySelector('[data-new-note-input]');
 
 const LOCAL_STORAGE_NOTE_KEY = 'note.lists';
-const LOCAL_STORAGE_NOTE_KEY = 'lists.lists';
 const LOCAL_STORAGE_SELECTED_ID = 'object.selected.id';
 
 let notes = JSON.parse(localStorage.getItem(LOCAL_STORAGE_NOTE_KEY)) || [];
-let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_NOTE_KEY)) || [];
 
 let selectedId = localStorage.getItem(LOCAL_STORAGE_SELECTED_ID);
 let active = null;
@@ -19,7 +17,6 @@ notesContainer.addEventListener('click', e => {
     if (e.target.tagName.toLowerCase() == 'li') {
         activeDisplay.classList.remove("hidden");
         selectedId = e.target.dataset.noteId;
-        console.log(e.target.dataset.noteId)
         save();
         render();
     }
@@ -31,8 +28,9 @@ document.querySelector('[data-new-note-form]').addEventListener('submit', e => {
     if (noteName == null || noteName === '') return
     const note = createNote(noteName)
     selectedId= note.id;
-    newNoteInput.value = null
-    notes.push(note)
+    newNoteInput.value = null;
+    notes.push(note);
+    activeDisplay.classList.remove("hidden");   
     save();
     render();
 })
@@ -83,6 +81,8 @@ function render() {
         })
         textArea.innerHTML=active.text;
         activeDisplay.querySelector(".todo-body").append(textArea);
+        activeDisplay.querySelector("div.todo-body > p").focus();
+   
     }
 
     clearElement(notesContainer);
