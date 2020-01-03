@@ -13,15 +13,18 @@
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
-  background-color: var(--clr-primary);
+  background-image: linear-gradient(140deg, rgb(57, 45, 209) 0%, rgb(142, 41, 149) 100%);
+  /* background-color: var(--clr-primary); */
   color: var(--clr-light);
   display: grid;
   grid: "header header header  header" auto 
         "lists  active active  notes" /1fr 1fr 1fr 1fr;
+  grid-template-rows:25% auto;
 }
 
 .title {
@@ -100,19 +103,19 @@ form {
 }
 
 .new::-webkit-input-placeholder {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .new:-ms-input-placeholder {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .new::-ms-input-placeholder {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .new::placeholder {
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .new:focus {
@@ -150,6 +153,7 @@ form {
 .todo-list {
   --spacer: 2rem;
   grid-area: active;
+  margin-bottom: 7vh;
   background: var(--clr-light);
   color: var(--clr-dark);
 }
@@ -280,7 +284,7 @@ form {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: -35px;
+  bottom: 3vh;
   color: var(--clr-light);
 }
 

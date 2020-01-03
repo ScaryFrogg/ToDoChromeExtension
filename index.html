@@ -1,88 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Todo list</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
 
-  <body>
-    <h1 class="title">Stay organised!</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Todo list</title>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
 
-    <div class="all-tasks">
-      <h2 class="task-list-title">My lists</h2>
-      <ul class="task-list" data-lists></ul>
-      <!-- lists -->
-      <form action="" data-new-list-form>
-        <input 
-          type="text"
-          class="new list"
-          data-new-list-input
-          placeholder="new list name"
-          aria-label="new list name"
-        />
-        <button class="btn create" aria-label="create new list">+</button>
-      </form>
+<body>
+  <h1 class="title">Stay organised!</h1>
+
+  <div class="all-tasks">
+    <h2 class="task-list-title">My lists</h2>
+    <ul class="task-list" data-lists></ul>
+    <!-- lists -->
+    <form action="" data-new-list-form>
+      <input type="text" class="new list" data-new-list-input placeholder="new list name" aria-label="new list name" />
+      <button class="btn create" aria-label="create new list">+</button>
+    </form>
+  </div>
+
+  <!-- active -->
+  <div class="todo-list" data-list-display-container>
+    <div class="todo-header">
+      <h2 class="list-title" data-list-title></h2>
     </div>
+    <div class="todo-body">
+      <div class="tasks" data-tasks></div>
 
-    <!-- active -->
-    <div class="todo-list" data-list-display-container>
-      <div class="todo-header">
-        <h2 class="list-title" data-list-title></h2>
-        <p class="task-count" data-list-count>0 tasks remaining</p>
+      <div class="new-task-creator">
+
       </div>
-    
-      <div class="todo-body">
-        <div class="tasks" data-tasks></div>
-    
-        <div class="new-task-creator">
-         <!--  <form action="" data-new-task-form>
-            <input type="text" data-new-task-input class="new task" placeholder="new task name"
-              aria-label="new task name" />
-            <button class="btn create" aria-label="create new task">+</button>
-          </form> -->
-        </div>
-    
-        <div class="delete-stuff">
-          <!-- <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button> -->
-          <button class="btn delete" data-delete-button>Delete note</button>
-        </div>
-      </div>
-    </div>
-    
-    <!-- notes -->
-    <div class="all-notes">
-      <h2 class="notes-list-title">My notes</h2>
-      <ul class="notes-list" data-notes-lists></ul>
 
-      <form action="" data-new-note-form>
-        <input 
-          type="text"
-          class="new list"
-          data-new-note-input
-          placeholder="new notes name"
-          aria-label="new notes name"
-        />
-        <button class="btn create" aria-label="create new list">+</button>
-      </form>
     </div>
-   
+  </div>
+  <div class="delete-stuff">
+    <!-- <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button> -->
+    <button class="btn delete" data-delete-button></button>
+  </div>
+
+  <!-- notes -->
+  <div class="all-notes">
+    <h2 class="notes-list-title">My notes</h2>
+    <ul class="notes-list" data-notes-lists></ul>
+
+    <form action="" data-new-note-form>
+      <input type="text" class="new list" data-new-note-input placeholder="new notes name"
+        aria-label="new notes name" />
+      <button class="btn create" aria-label="create new list">+</button>
+    </form>
+  </div>
+
+  </div>
+  <template id="task-template">
+    <div class="task">
+      <input type="checkbox" />
+      <label>
+        <span class="custom-checkbox"></span>
+      </label>
     </div>
-    <template id="task-template">
-      <div class="task">
-        <input type="checkbox" />
-        <label>
-          <span class="custom-checkbox"></span>
-        </label>
-      </div>
-    </template>
-<!--     <script defer src="scriptTasks.js"></script> -->
-    <script defer src="scriptNotes.js"></script>
-  </body>
+  </template>
+   <!-- <script defer src="scriptNotes.js"></script>
+  <script defer src="scriptLists.js"></script> -->
+  <script defer src="main.js"></script>
+</body>
+
 </html>
